@@ -8,14 +8,32 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Image.asset(
-          'assets/app_header.png',
-          color: Colors.blue,
-          width: 130,
-          height: 40,
+      margin: EdgeInsets.only(left: 10, top: 35, bottom: 10),
+      child: Row(children: [
+        InkWell(
+          child: Image.asset('assets/menuIcon@2x.png',
+              color: Colors.white, height: 20),
+          /*      Icon(
+              Icons.menu,
+              color: Colors.white,
+              size: 35,
+            ),
+      */ /*    onTap: () {
+              setState() {
+                // isCollapsed = !isCollapsed;
+              }
+          */
+          //}
         ),
-      ),
+        Expanded(
+          child: Image.asset(
+            'assets/app_header.png',
+            color: Colors.white,
+            width: 130,
+            height: 30,
+          ),
+        ),
+      ]),
     );
   }
 }

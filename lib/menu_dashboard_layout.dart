@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ntucmercatus/dashboard.dart';
+import 'package:ntucmercatus/myflexiappbar.dart';
 
 import 'myappbar.dart';
 
@@ -18,14 +19,13 @@ class MenuDashboardPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: <Widget>[
-          menu(context),
+          //   menu(context), Code for side drawer
           dashboard(context),
         ],
       ),
     );
   }
 
-//TODO:
   Widget menu(context) {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0),
@@ -52,7 +52,7 @@ class MenuDashboardPage extends StatelessWidget {
             SizedBox(height: 10),
             Text("Collaboration",
                 style: TextStyle(color: Colors.black, fontSize: 22)),
-            /*   SizedBox(height: 10),
+            SizedBox(height: 10),
             Text("Training Calendar",
                 style: TextStyle(color: Colors.black, fontSize: 22)),
             SizedBox(height: 10),
@@ -66,7 +66,6 @@ class MenuDashboardPage extends StatelessWidget {
                 style: TextStyle(color: Colors.black, fontSize: 22)),
             SizedBox(height: 10),
             Text("Logout", style: TextStyle(color: Colors.black, fontSize: 22)),
-         */
           ],
         ),
       ),
@@ -85,24 +84,61 @@ class MenuDashboardPage extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(40)),
         elevation: 8,
         child: Container(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 48),
+//            padding: const EdgeInsets.only(top: 48),
           child: Column(
             children: <Widget>[
-              Row(
+              Container(
+                color: Colors.red,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    InkWell(
-                        child: Icon(Icons.menu, color: Colors.blue),
-                        onTap: () {
-                          setState() {
-                            isCollapsed = !isCollapsed;
-                          }
-                        }),
-                    Expanded(child: MyAppBar()),
-
-                    // Icon(Icons.settings, color: Colors.blue),
-                  ])
+                    // put menu icon here if needed.
+                    Expanded(child: MyAppBar()), // normal app bar
+                  ],
+                ),
+              ),
+              Container(
+                  height: 200,
+                  child: PageView(
+                    controller: PageController(viewportFraction: 0.8),
+                    scrollDirection: Axis.horizontal,
+                    pageSnapping: true,
+                    children: <Widget>[
+                      //     SizedBox(height: 10),
+                      Card(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(15)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Container(),
+                              Container(),
+                              Container(),
+                            ],
+                          )),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        color: Colors.redAccent,
+                        width: 100,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        color: Colors.blue,
+                        width: 100,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        color: Colors.greenAccent,
+                        width: 100,
+                      ),
+                    ],
+                  ))
             ],
           ),
         ),
