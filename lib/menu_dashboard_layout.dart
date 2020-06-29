@@ -1,144 +1,411 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:ntucmercatus/dashboard.dart';
-import 'package:ntucmercatus/myflexiappbar.dart';
+import 'package:ntucmercatus/collaboration.dart';
 
 import 'myappbar.dart';
 
 class MenuDashboardPage extends StatelessWidget {
-  bool isCollapsed = true;
-  double screenWidth, screenHeight;
+  // bool isCollapsed = true;
+  //double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 3000);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
+/*
     screenHeight = size.height;
     screenWidth = size.width;
+*/
 
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: <Widget>[
-          //   menu(context), Code for side drawer
           dashboard(context),
         ],
       ),
     );
   }
 
-  Widget menu(context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16.0),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("Home", style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("About Us",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("CEO Speaks",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Core Values",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Sales Enablement",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Collaboration",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Training Calendar",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Claim FAQ's",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Terms and Conditions",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Contact Us",
-                style: TextStyle(color: Colors.black, fontSize: 22)),
-            SizedBox(height: 10),
-            Text("Logout", style: TextStyle(color: Colors.black, fontSize: 22)),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget dashboard(context) {
-    return AnimatedPositioned(
-      top: isCollapsed ? 0 : 0.2 * screenHeight,
-      bottom: isCollapsed ? 0 : 0.2 * screenWidth,
-      left: isCollapsed ? 0 : 0.6 * screenWidth,
-      right: isCollapsed ? 0 : -0.4 * screenWidth,
-      duration: duration,
+    return SingleChildScrollView(
       child: Material(
         animationDuration: const Duration(milliseconds: 3000),
-        borderRadius: BorderRadius.all(Radius.circular(40)),
+//        borderRadius: BorderRadius.all(Radius.circular(40)),
         elevation: 8,
         child: Container(
-//            padding: const EdgeInsets.only(top: 48),
           child: Column(
             children: <Widget>[
               Container(
-                color: Colors.red,
+                color: Colors.red.shade800,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    // put menu icon here if needed.
                     Expanded(child: MyAppBar()), // normal app bar
                   ],
                 ),
               ),
+
+              Stack(
+                children: <Widget>[
+                  Container(height: 100, color: Colors.red.shade800),
+                  Container(
+                    height: 200,
+                    child: PageView(
+                      controller: PageController(viewportFraction: 0.95),
+                      scrollDirection: Axis.horizontal,
+                      pageSnapping: true,
+                      children: <Widget>[
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10)),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset(
+                                  'assets/img1-1.jpg',
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 5,
+                                    margin: EdgeInsets.only(top: 5, left: 10),
+                                    height: 25,
+                                    color: Colors.red.shade800,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                      'Create business value by collaborating'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10)),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset(
+                                  'assets/img1-1.jpg',
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 5,
+                                    margin: EdgeInsets.only(top: 5, left: 10),
+                                    height: 25,
+                                    color: Colors.red.shade800,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                      'Create business value by collaborating'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10)),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image.asset(
+                                  'assets/img1-1.jpg',
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 5,
+                                    margin: EdgeInsets.only(top: 5, left: 10),
+                                    height: 25,
+                                    color: Colors.red.shade800,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                      'Create business value by collaborating'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              //Container for top card
+
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10)),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 10, left: 10),
+                          child: Text(
+                            'Upcoming Events',
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(top: 5, right: 5),
+                            child: Text('See All',
+                                style: TextStyle(color: Colors.red))),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 10, left: 10),
+                          child: Image.asset(
+                            'assets/rew1@3x.png',
+                            height: 40,
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          margin: EdgeInsets.only(right: 120),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                '2018 ISM Events',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              Text('27 Sept - 01 Oct'),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 5),
+                          child: Image.asset(
+                            'assets/arrow@3x.png',
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Divider(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 10, left: 10),
+                          child: Image.asset(
+                            'assets/rew1@3x.png',
+                            height: 40,
+                          ),
+                        ),
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.only(right: 120),
+                            child: Column(
+                              children: <Widget>[
+                                Text('2018 ISM Events',
+                                    style: TextStyle(fontSize: 15)),
+                                Text('27 Sept - 01 Oct'),
+                              ],
+                            )),
+                        Container(
+                          margin: EdgeInsets.only(right: 5),
+                          child: Image.asset('assets/arrow@3x.png'),
+                          height: 20,
+                          width: 20,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              ), //Card for Upcoming Events
               Container(
-                  height: 200,
-                  child: PageView(
-                    controller: PageController(viewportFraction: 0.8),
+                height: 150,
+                child: PageView(
+                    controller: PageController(viewportFraction: 0.5),
                     scrollDirection: Axis.horizontal,
                     pageSnapping: true,
                     children: <Widget>[
-                      //     SizedBox(height: 10),
                       Card(
-                          margin: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 8),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(15)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10)),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            Image.asset(
+                              'assets/salesIcon@2x.png',
+                              height: 50,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              '  Directory  ',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10)),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            Image.asset('assets/coreValueIcon@2x.png',
+                                height: 50),
+                            SizedBox(height: 10),
+                            Text('  Core Values  ',
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10)),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Collaboration()),
+                                );
+                              },
+                              child: Image.asset(
+                                  'assets/collaborationIcon@2x.png',
+                                  height: 50),
+                            ),
+                            SizedBox(height: 10),
+                            Text('  Collaboration  ',
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10)),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            Image.asset('assets/salesIcon@2x.png', height: 50),
+                            SizedBox(height: 10),
+                            Text('  Sales\n Enablement',
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10)),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 10),
+                            Image.asset('assets/salesIcon@2x.png', height: 50),
+                            SizedBox(height: 10),
+                            Text('  Training \n Calendar',
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ),
+                    ]),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10)),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 10, left: 10),
+                          child: Text(
+                            'News',
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(top: 10, right: 10),
+                            child: Text('See All',
+                                style: TextStyle(color: Colors.red))),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 10, left: 10),
+                          child: Image.asset(
+                            'assets/twitterIcon@2x.png',
+                            height: 40,
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          margin: EdgeInsets.only(right: 10),
                           child: Column(
-                            mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Container(),
-                              Container(),
-                              Container(),
+                              Text(
+                                '  Congratulations to @Sovereugnnz\n for taking home two honors at the\n White Camelia Awards! The team\n was recognised for thier ongoing\n commitement towards gender\n equality in the workplace! Congrats\n team Soveregn!  ',
+                                style: TextStyle(fontSize: 15),
+                              ),
                             ],
-                          )),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 8),
-                        color: Colors.redAccent,
-                        width: 100,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 8),
-                        color: Colors.blue,
-                        width: 100,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 8),
-                        color: Colors.greenAccent,
-                        width: 100,
-                      ),
-                    ],
-                  ))
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              ),
+              //rd(
+              // shape: RoundedRectangleBorder(
+              //   borderRadius: new BorderRadius.circular(10)),
+              //margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              // child: Column(),
+              // ),
             ],
           ),
         ),

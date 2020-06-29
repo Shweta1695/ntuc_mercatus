@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class MyFlexiableAppBar extends StatelessWidget {
@@ -11,7 +12,8 @@ class MyFlexiableAppBar extends StatelessWidget {
 
     return new Container(
       padding: new EdgeInsets.only(top: statusBarHeight),
-      height: statusBarHeight + appBarHeight,
+      //     height: statusBarHeight + appBarHeight,
+      height: 200,
       child: new Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -24,3 +26,4 @@ class MyFlexiableAppBar extends StatelessWidget {
     );
   }
 }
+*/

@@ -10,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
+  Animation<double> animation;
+
   int _state = 0;
   @override
   Widget build(BuildContext context) {
@@ -59,8 +61,6 @@ class _LoginScreenState extends State<LoginScreen>
               ),
               MaterialButton(
                 child: setUpButtonChild(),
-
-//                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 onPressed: () {
                   setState(() {
                     if (_state == 0) {
@@ -71,7 +71,6 @@ class _LoginScreenState extends State<LoginScreen>
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(15)),
                 elevation: 5.0,
-                //  child: Text("", style: TextStyle(color: Colors.white)),
                 color: Colors.red,
               ),
               SizedBox(
@@ -88,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen>
         "    SIGN IN    ",
         style: const TextStyle(
           color: Colors.white,
+
 //          fontSize: 16.0,
         ),
       );
@@ -120,5 +120,3 @@ class _LoginScreenState extends State<LoginScreen>
     });
   }
 }
-
-//}

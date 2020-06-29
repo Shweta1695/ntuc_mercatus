@@ -13,17 +13,6 @@ class MyAppBar extends StatelessWidget {
         InkWell(
           child: Image.asset('assets/menuIcon@2x.png',
               color: Colors.white, height: 20),
-          /*      Icon(
-              Icons.menu,
-              color: Colors.white,
-              size: 35,
-            ),
-      */ /*    onTap: () {
-              setState() {
-                // isCollapsed = !isCollapsed;
-              }
-          */
-          //}
         ),
         Expanded(
           child: Image.asset(
