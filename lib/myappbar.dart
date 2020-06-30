@@ -1,3 +1,7 @@
+/*
+Implemented inside menu_dashboard_layout page. Kept just for reference.abstract
+
+
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -26,3 +30,4 @@ class MyAppBar extends StatelessWidget {
     );
   }
 }
+*/

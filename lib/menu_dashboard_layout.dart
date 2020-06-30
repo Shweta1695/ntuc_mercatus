@@ -6,20 +6,30 @@ import 'package:ntucmercatus/collaboration.dart';
 import 'myappbar.dart';
 
 class MenuDashboardPage extends StatelessWidget {
-  // bool isCollapsed = true;
-  //double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 3000);
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
-/*
-    screenHeight = size.height;
-    screenWidth = size.width;
-*/
-
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        leading: Container(
+          margin: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 18,
+          ),
+          child: Image.asset('assets/menuIcon@2x.png',
+              color: Colors.white, height: 20),
+        ),
+        backgroundColor: Colors.red.shade800,
+        title: Image.asset(
+          'assets/app_header.png',
+          color: Colors.white,
+          width: 130,
+          height: 30,
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           dashboard(context),
@@ -37,17 +47,6 @@ class MenuDashboardPage extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
-              Container(
-                color: Colors.red.shade800,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(child: MyAppBar()), // normal app bar
-                  ],
-                ),
-              ),
-
               Stack(
                 children: <Widget>[
                   Container(height: 100, color: Colors.red.shade800),
@@ -169,7 +168,7 @@ class MenuDashboardPage extends StatelessWidget {
                         Container(
                             margin: EdgeInsets.only(top: 5, right: 5),
                             child: Text('See All',
-                                style: TextStyle(color: Colors.red))),
+                                style: TextStyle(color: Colors.red.shade800))),
                       ],
                     ),
                     SizedBox(
@@ -364,7 +363,7 @@ class MenuDashboardPage extends StatelessWidget {
                         Container(
                             margin: EdgeInsets.only(top: 10, right: 10),
                             child: Text('See All',
-                                style: TextStyle(color: Colors.red))),
+                                style: TextStyle(color: Colors.red.shade800))),
                       ],
                     ),
                     SizedBox(
@@ -400,12 +399,6 @@ class MenuDashboardPage extends StatelessWidget {
                   ],
                 ),
               ),
-              //rd(
-              // shape: RoundedRectangleBorder(
-              //   borderRadius: new BorderRadius.circular(10)),
-              //margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-              // child: Column(),
-              // ),
             ],
           ),
         ),
