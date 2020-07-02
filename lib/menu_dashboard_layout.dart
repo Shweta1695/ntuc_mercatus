@@ -1,9 +1,7 @@
+import 'dart:ui';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ntucmercatus/collaboration.dart';
-
-import 'myappbar.dart';
 
 class MenuDashboardPage extends StatelessWidget {
   final Duration duration = const Duration(milliseconds: 3000);
@@ -16,7 +14,7 @@ class MenuDashboardPage extends StatelessWidget {
         centerTitle: true,
         leading: Container(
           margin: EdgeInsets.symmetric(
-            horizontal: 16,
+            horizontal: 18,
             vertical: 18,
           ),
           child: Image.asset('assets/menuIcon@2x.png',
@@ -74,7 +72,7 @@ class MenuDashboardPage extends StatelessWidget {
                                   Container(
                                     width: 5,
                                     margin: EdgeInsets.only(top: 5, left: 10),
-                                    height: 25,
+                                    height: 23,
                                     color: Colors.red.shade800,
                                   ),
                                   SizedBox(width: 10),
@@ -102,7 +100,7 @@ class MenuDashboardPage extends StatelessWidget {
                                   Container(
                                     width: 5,
                                     margin: EdgeInsets.only(top: 5, left: 10),
-                                    height: 25,
+                                    height: 23,
                                     color: Colors.red.shade800,
                                   ),
                                   SizedBox(width: 10),
@@ -130,7 +128,7 @@ class MenuDashboardPage extends StatelessWidget {
                                   Container(
                                     width: 5,
                                     margin: EdgeInsets.only(top: 5, left: 10),
-                                    height: 25,
+                                    height: 23,
                                     color: Colors.red.shade800,
                                   ),
                                   SizedBox(width: 10),
@@ -150,7 +148,7 @@ class MenuDashboardPage extends StatelessWidget {
 
               Card(
                 shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10)),
+                    borderRadius: new BorderRadius.circular(5)),
                 margin:
                     const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
                 child: Column(
@@ -162,13 +160,14 @@ class MenuDashboardPage extends StatelessWidget {
                           margin: EdgeInsets.only(top: 10, left: 10),
                           child: Text(
                             'Upcoming Events',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 20),
                           ),
                         ),
                         Container(
                             margin: EdgeInsets.only(top: 5, right: 5),
                             child: Text('See All',
-                                style: TextStyle(color: Colors.red.shade800))),
+                                style: TextStyle(
+                                    color: Colors.red.shade800, fontSize: 13))),
                       ],
                     ),
                     SizedBox(
@@ -186,14 +185,16 @@ class MenuDashboardPage extends StatelessWidget {
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
-                          margin: EdgeInsets.only(right: 120),
+                          margin: EdgeInsets.only(right: 130),
                           child: Column(
                             children: <Widget>[
                               Text(
-                                '2018 ISM Events',
+                                '2018 ISM Event',
                                 style: TextStyle(fontSize: 15),
                               ),
-                              Text('27 Sept - 01 Oct'),
+                              SizedBox(height: 3),
+                              Text('27 Sept - 01 Oct      ',
+                                  style: TextStyle(fontSize: 12)),
                             ],
                           ),
                         ),
@@ -220,12 +221,14 @@ class MenuDashboardPage extends StatelessWidget {
                         ),
                         Container(
                             alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.only(right: 120),
+                            margin: EdgeInsets.only(right: 130),
                             child: Column(
                               children: <Widget>[
-                                Text('2018 ISM Events',
+                                Text('2018 ISM Event',
                                     style: TextStyle(fontSize: 15)),
-                                Text('27 Sept - 01 Oct'),
+                                SizedBox(height: 3),
+                                Text('27 Sept - 01 Oct      ',
+                                    style: TextStyle(fontSize: 12)),
                               ],
                             )),
                         Container(
@@ -251,7 +254,7 @@ class MenuDashboardPage extends StatelessWidget {
                     children: <Widget>[
                       Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                            borderRadius: new BorderRadius.circular(5)),
                         margin: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
                         child: Column(
@@ -259,7 +262,7 @@ class MenuDashboardPage extends StatelessWidget {
                             SizedBox(height: 10),
                             Image.asset(
                               'assets/salesIcon@2x.png',
-                              height: 50,
+                              height: 45,
                             ),
                             SizedBox(height: 10),
                             Text(
@@ -271,14 +274,14 @@ class MenuDashboardPage extends StatelessWidget {
                       ),
                       Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                            borderRadius: new BorderRadius.circular(5)),
                         margin: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 10),
                             Image.asset('assets/coreValueIcon@2x.png',
-                                height: 50),
+                                height: 45),
                             SizedBox(height: 10),
                             Text('  Core Values  ',
                                 style: TextStyle(fontSize: 20)),
@@ -287,7 +290,7 @@ class MenuDashboardPage extends StatelessWidget {
                       ),
                       Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                            borderRadius: new BorderRadius.circular(5)),
                         margin: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
                         child: Column(
@@ -303,7 +306,7 @@ class MenuDashboardPage extends StatelessWidget {
                               },
                               child: Image.asset(
                                   'assets/collaborationIcon@2x.png',
-                                  height: 50),
+                                  height: 45),
                             ),
                             SizedBox(height: 10),
                             Text('  Collaboration  ',
@@ -313,13 +316,13 @@ class MenuDashboardPage extends StatelessWidget {
                       ),
                       Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                            borderRadius: new BorderRadius.circular(5)),
                         margin: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 10),
-                            Image.asset('assets/salesIcon@2x.png', height: 50),
+                            Image.asset('assets/salesIcon@2x.png', height: 45),
                             SizedBox(height: 10),
                             Text('  Sales\n Enablement',
                                 style: TextStyle(fontSize: 20)),
@@ -328,13 +331,13 @@ class MenuDashboardPage extends StatelessWidget {
                       ),
                       Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                            borderRadius: new BorderRadius.circular(5)),
                         margin: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 10),
-                            Image.asset('assets/salesIcon@2x.png', height: 50),
+                            Image.asset('assets/salesIcon@2x.png', height: 45),
                             SizedBox(height: 10),
                             Text('  Training \n Calendar',
                                 style: TextStyle(fontSize: 20)),
@@ -345,7 +348,7 @@ class MenuDashboardPage extends StatelessWidget {
               ),
               Card(
                 shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10)),
+                    borderRadius: new BorderRadius.circular(5)),
                 margin:
                     const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
                 child: Column(
@@ -357,13 +360,16 @@ class MenuDashboardPage extends StatelessWidget {
                           margin: EdgeInsets.only(top: 10, left: 10),
                           child: Text(
                             'News',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 20),
                           ),
                         ),
                         Container(
                             margin: EdgeInsets.only(top: 10, right: 10),
                             child: Text('See All',
-                                style: TextStyle(color: Colors.red.shade800))),
+                                style: TextStyle(
+                                  color: Colors.red.shade800,
+                                  fontSize: 13,
+                                ))),
                       ],
                     ),
                     SizedBox(
@@ -373,21 +379,29 @@ class MenuDashboardPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Container(
-                          margin: EdgeInsets.only(top: 10, left: 10),
+                          margin: EdgeInsets.only(left: 10, bottom: 85),
                           child: Image.asset(
                             'assets/twitterIcon@2x.png',
                             height: 40,
                           ),
                         ),
                         Container(
+                          width: 260,
                           alignment: Alignment.centerLeft,
                           margin: EdgeInsets.only(right: 10),
                           child: Column(
                             children: <Widget>[
                               Text(
-                                '  Congratulations to @Sovereugnnz\n for taking home two honors at the\n White Camelia Awards! The team\n was recognised for thier ongoing\n commitement towards gender\n equality in the workplace! Congrats\n team Soveregn!  ',
+                                ' Congratulations to @Sovereignnz\n for taking home two honors at the\n White Camelia Awards! The team\n was recognised for thier ongoing\n commitement towards gender\n equality in the workplace! Congrats\n team Soveregn!  ',
                                 style: TextStyle(fontSize: 15),
                               ),
+                              SizedBox(height: 5),
+                              Text(
+                                '11 Oct 2018                                 '
+                                '                              ',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 11),
+                              )
                             ],
                           ),
                         ),

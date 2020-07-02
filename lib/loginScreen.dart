@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen>
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: BorderRadius.circular(10.0),
             ),
             child: Container(
               height: 270,
@@ -95,9 +95,9 @@ class _LoginScreenState extends State<LoginScreen>
                   LayoutBuilder(builder:
                       (BuildContext context, BoxConstraints constraints) {
                     return CircularRevealAnimation(
-                      minRadius: 100,
+                      minRadius: 20,
                       maxRadius: 500,
-                      centerOffset: Offset(140.0, 340.0),
+                      centerOffset: Offset(140.0, 235.0),
                       child: isLoginClicked
                           ? Container(color: Colors.red.shade800)
                           : Container(),
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen>
             child: Text(
               'Login',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 27),
+              style: TextStyle(fontSize: 23),
             ),
           ),
           Container(
@@ -152,10 +152,10 @@ class _LoginScreenState extends State<LoginScreen>
               child: ProgressButton(
                 borderRadius: 50.0,
                 defaultWidget: const Text('SIGN IN',
-                    style: TextStyle(color: Colors.white)),
+                    style: TextStyle(color: Colors.white, fontSize: 17)),
                 progressWidget: const CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
-                color: Colors.red.shade800,
+                color: Colors.red.shade700,
                 width: 150,
                 onPressed: () async {
                   await Future.delayed(const Duration(milliseconds: 2000), () {

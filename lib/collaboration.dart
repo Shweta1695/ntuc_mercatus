@@ -9,7 +9,7 @@ class Collaboration extends StatelessWidget {
         centerTitle: true,
         leading: Container(
           margin: EdgeInsets.symmetric(
-            horizontal: 16,
+            horizontal: 18,
             vertical: 18,
           ),
           child: Image.asset('assets/menuIcon@2x.png',
@@ -42,15 +42,15 @@ class Collaboration extends StatelessWidget {
                               children: <Widget>[
                                 Container(
                                     margin: EdgeInsets.only(
-                                        left: 8, bottom: 15, top: 10),
+                                        left: 16, bottom: 15, top: 20),
                                     child: Text('Employee Community',
                                         style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 20))),
+                                            fontSize: 17))),
                               ],
                             ),
                             Container(
-                              margin: EdgeInsets.only(top: 10, bottom: 10),
+                              margin: EdgeInsets.only(right: 40, left: 16),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -68,9 +68,10 @@ class Collaboration extends StatelessWidget {
                                       Text('Members',
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 20))
+                                              fontSize: 18))
                                     ],
                                   ),
+                                  SizedBox(width: 50),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -84,9 +85,10 @@ class Collaboration extends StatelessWidget {
                                       Text('Online',
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 20))
+                                              fontSize: 18))
                                     ],
                                   ),
+                                  SizedBox(width: 30),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -100,17 +102,17 @@ class Collaboration extends StatelessWidget {
                                       Text('Posts',
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 20))
+                                              fontSize: 18))
                                     ],
                                   )
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 20),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Divider(
-                                color: Colors.grey[300],
+                                color: Colors.grey[200],
                               ),
                             ),
                             Row(
@@ -118,7 +120,8 @@ class Collaboration extends StatelessWidget {
                               children: <Widget>[
                                 Container(
                                   margin: EdgeInsets.only(left: 10),
-                                  width: 150,
+                                  width: 140,
+                                  height: 30,
                                   child: new Image.asset(
                                     'assets/group.jpeg',
                                     width: 20,
@@ -140,12 +143,13 @@ class Collaboration extends StatelessWidget {
                                 )
                               ],
                             ),
+                            SizedBox(height: 20),
                           ],
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 250, left: 16.0),
+                      padding: const EdgeInsets.only(top: 240, left: 16.0),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Column(
@@ -155,7 +159,7 @@ class Collaboration extends StatelessWidget {
                           children: <Widget>[
                             Text("Forum",
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 22)),
+                                    color: Colors.black, fontSize: 20)),
                             SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -164,7 +168,7 @@ class Collaboration extends StatelessWidget {
                                   margin: EdgeInsets.only(top: 10, left: 10),
                                   child: Image.asset(
                                     'assets/coreValueIcon@2x.png',
-                                    height: 40,
+                                    height: 35,
                                   ),
                                 ),
                                 Container(
@@ -176,7 +180,7 @@ class Collaboration extends StatelessWidget {
                                       Text("Security Team",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 19)),
+                                              fontSize: 18)),
                                     ],
                                   ),
                                 ),
@@ -190,26 +194,33 @@ class Collaboration extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              endIndent: 20,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Container(
-                                  margin: EdgeInsets.only(top: 10, left: 10),
+                                  margin: EdgeInsets.only(top: 5, left: 10),
                                   child: Image.asset(
                                     'assets/coreValueIcon@2x.png',
-                                    height: 40,
+                                    height: 35,
                                   ),
                                 ),
                                 Container(
                                   alignment: Alignment.centerLeft,
-                                  margin: EdgeInsets.only(right: 120),
+                                  margin: EdgeInsets.only(right: 140),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text("Audit Team",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 19)),
+                                              fontSize: 18)),
                                     ],
                                   ),
                                 ),
@@ -223,8 +234,8 @@ class Collaboration extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Divider(
-                              color: Colors.grey[300],
+                            SizedBox(
+                              height: 15,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -233,19 +244,19 @@ class Collaboration extends StatelessWidget {
                                   margin: EdgeInsets.only(top: 10, left: 10),
                                   child: Image.asset(
                                     'assets/coreValueIcon@2x.png',
-                                    height: 40,
+                                    height: 35,
                                   ),
                                 ),
                                 Container(
                                   alignment: Alignment.centerLeft,
-                                  margin: EdgeInsets.only(right: 140),
+                                  margin: EdgeInsets.only(right: 160),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text("Hr Team",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 19)),
+                                              fontSize: 18)),
                                     ],
                                   ),
                                 ),
@@ -259,26 +270,31 @@ class Collaboration extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 5),
+                            Divider(
+                              color: Colors.grey[300],
+                              endIndent: 20,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Container(
-                                  margin: EdgeInsets.only(top: 10, left: 10),
+                                  margin: EdgeInsets.only(top: 5, left: 10),
                                   child: Image.asset(
                                     'assets/coreValueIcon@2x.png',
-                                    height: 40,
+                                    height: 35,
                                   ),
                                 ),
                                 Container(
                                   alignment: Alignment.centerLeft,
-                                  margin: EdgeInsets.only(right: 140),
+                                  margin: EdgeInsets.only(right: 160),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text("Cafeteria",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 19)),
+                                              fontSize: 18)),
                                     ],
                                   ),
                                 ),
