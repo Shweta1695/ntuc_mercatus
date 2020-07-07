@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ntucmercatus/collaboration.dart';
+import 'package:ntucmercatus/directory.dart';
 
 class MenuDashboardPage extends StatelessWidget {
   final Duration duration = const Duration(milliseconds: 3000);
@@ -260,9 +261,16 @@ class MenuDashboardPage extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 10),
-                            Image.asset(
-                              'assets/salesIcon@2x.png',
-                              height: 45,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Directory()),
+                                );
+                              },
+                              child: Image.asset('assets/salesIcon@2x.png',
+                                  height: 45),
                             ),
                             SizedBox(height: 10),
                             Text(
