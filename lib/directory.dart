@@ -49,20 +49,17 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                     onTap: () {
                       setState(() {
                         initiateAnimation();
-
                         _radioValue1 = 0;
                       });
                     },
                     child: Row(
                       children: <Widget>[
-//                    SizedBox(height: 20),
                         Container(
                           margin: EdgeInsets.only(left: 6, bottom: 5),
                           width: 45,
                           height: 45,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            //borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
                                 image: AssetImage('assets/aao.jpg'),
                                 fit: BoxFit.cover),

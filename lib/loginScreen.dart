@@ -18,7 +18,6 @@ class _LoginScreenState extends State<LoginScreen>
   TextEditingController userPasswordController;
   AnimationController controller;
   Animation<Offset> offset;
-  GlobalKey<_LoginScreenState> _counterState = new GlobalKey();
   AnimationController animationController;
   bool isLoginClicked = false;
 

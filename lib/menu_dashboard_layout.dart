@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ntucmercatus/collaboration.dart';
 import 'package:ntucmercatus/directory.dart';
+import 'coreValues.dart';
 
 class MenuDashboardPage extends StatelessWidget {
   final Duration duration = const Duration(milliseconds: 3000);
@@ -253,47 +254,54 @@ class MenuDashboardPage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     pageSnapping: true,
                     children: <Widget>[
-                      Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(5)),
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 8),
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(height: 10),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Directory()),
-                                );
-                              },
-                              child: Image.asset('assets/salesIcon@2x.png',
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Directory()),
+                          );
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(5)),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(height: 10),
+                              Image.asset('assets/salesIcon@2x.png',
                                   height: 45),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              '  Directory  ',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
+                              SizedBox(height: 10),
+                              Text('  Directory  ',
+                                  style: TextStyle(fontSize: 20)),
+                            ],
+                          ),
                         ),
                       ),
-                      Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(5)),
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 8),
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(height: 10),
-                            Image.asset('assets/coreValueIcon@2x.png',
-                                height: 45),
-                            SizedBox(height: 10),
-                            Text('  Core Values  ',
-                                style: TextStyle(fontSize: 20)),
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CoreValues()),
+                          );
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(5)),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(height: 10),
+                              Image.asset('assets/coreValueIcon@2x.png',
+                                  height: 45),
+                              SizedBox(height: 10),
+                              Text('  Core Values  ',
+                                  style: TextStyle(fontSize: 20)),
+                            ],
+                          ),
                         ),
                       ),
                       Card(
