@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ntucmercatus/collaboration.dart';
 import 'package:ntucmercatus/directory.dart';
+import 'package:ntucmercatus/slide_from_right_page_route.dart';
 import 'coreValues.dart';
 
 class MenuDashboardPage extends StatelessWidget {
@@ -256,11 +257,11 @@ class MenuDashboardPage extends StatelessWidget {
                     children: <Widget>[
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
+                          Navigator.push(context,
+                              SlideFromRightPageRoute(widget: Directory()));
+                          /* MaterialPageRoute(
                                 builder: (context) => Directory()),
-                          );
+                          );*/
                         },
                         child: Card(
                           shape: RoundedRectangleBorder(
@@ -281,11 +282,11 @@ class MenuDashboardPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
+                          Navigator.push(context,
+                              SlideFromRightPageRoute(widget: CoreValues()));
+                          /*  MaterialPageRoute(
                                 builder: (context) => CoreValues()),
-                          );
+                                );*/
                         },
                         child: Card(
                           shape: RoundedRectangleBorder(

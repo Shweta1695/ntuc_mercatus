@@ -9,6 +9,28 @@ class Directory extends StatefulWidget {
 class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
   int _radioValue1 = 0;
   int counter = 0;
+  int radioCounter = 0;
+  bool _visibility = false;
+  bool _visibility1 = false;
+  bool _visibility2 = false;
+  bool _visibility3 = false;
+  bool _visibility4 = false;
+  bool _visibility5 = false;
+  bool _visibility6 = false;
+  bool _visibility7 = false;
+  bool _visibility8 = false;
+  List name = [
+    'Antony James ',
+    'Ahsis Singhal       ',
+    'Ahsis Singhal      ',
+    'Manish Gautam ',
+    'Anuiit Sarkar     ',
+    'Antony James ',
+    'Manish Gautam ',
+    'Manish Gautam ',
+    'Manish Gautam '
+  ];
+
   Animation<double> animation;
   AnimationController controller;
   Animation<Offset> offset;
@@ -42,7 +64,7 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
           SingleChildScrollView(
             child: Container(
               color: Colors.white,
-              padding: EdgeInsets.only(top: 10, left: 15),
+              padding: EdgeInsets.only(top: 4, left: 15),
               child: Column(
                 children: <Widget>[
                   GestureDetector(
@@ -50,14 +72,20 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 0;
+                        _visibility = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
@@ -65,7 +93,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -76,9 +105,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Antony James',
+                                name.elementAt(0),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -89,27 +118,39 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 105),
+                        SizedBox(width: 101),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 0,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility,
+                            child: Radio(
+                              value: 0,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
+                  //  SizedBox(height: 2),
+                  //  SizedBox(height: 2),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //second row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 1;
+                        _visibility1 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility1 = false;
+                          radioCounter = 0;
+                        }
+                        //    _visibility1 = true;
                       });
                     },
                     child: Row(
@@ -119,8 +160,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                         //                    SizedBox(height: 20),
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -129,7 +170,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -140,9 +182,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Ahsis Singhal     ',
+                                name.elementAt(1),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -153,35 +195,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 86),
+                        SizedBox(width: 80),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 1,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility1,
+                            child: Radio(
+                              value: 1,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //third row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 2;
+                        _visibility2 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility2 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -190,7 +241,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -201,48 +253,57 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Ahsis Singhal    ',
+                                name.elementAt(2),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
                               ),
                               SizedBox(height: 8),
-                              Text('Director IT,Shared Services',
+                              Text('Director IT, Shared Services',
                                   style: TextStyle(fontSize: 12)),
                             ],
                           ),
                         ),
-                        SizedBox(width: 92),
+                        SizedBox(width: 84),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 2,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility2,
+                            child: Radio(
+                              value: 2,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //fourth row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 3;
+                        _visibility3 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility3 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -251,7 +312,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -262,9 +324,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Manish Gautam',
+                                name.elementAt(3),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -275,35 +337,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 92),
+                        SizedBox(width: 88),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 3,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility3,
+                            child: Radio(
+                              value: 3,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //fifth row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 4;
+                        _visibility4 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility4 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -313,7 +384,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -324,9 +396,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Anuiit Sarkar   ',
+                                name.elementAt(4),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -337,35 +409,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 102),
+                        SizedBox(width: 95),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 4,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility4,
+                            child: Radio(
+                              value: 4,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //sixth row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 5;
+                        _visibility5 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility5 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -374,7 +455,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -385,9 +467,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Antony James',
+                                name.elementAt(5),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -398,35 +480,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 105),
+                        SizedBox(width: 100),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 5,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility5,
+                            child: Radio(
+                              value: 5,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //seventh row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 6;
+                        _visibility6 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility6 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -435,7 +526,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade800,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -446,9 +538,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Manish Gautam',
+                                name.elementAt(6),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -459,35 +551,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 92),
+                        SizedBox(width: 88),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 6,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility6,
+                            child: Radio(
+                              value: 6,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //eight row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 7;
+                        _visibility7 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility7 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -496,7 +597,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade900,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -507,9 +609,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Manish Gautam',
+                                name.elementAt(7),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -520,35 +622,44 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 92),
+                        SizedBox(width: 88),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 7,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility7,
+                            child: Radio(
+                              value: 7,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                   //nine row
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         initiateAnimation();
                         _radioValue1 = 8;
+                        _visibility8 = true;
+                        radioCounter++;
+                        if (radioCounter > 1) {
+                          _visibility8 = false;
+                          radioCounter = 0;
+                        }
                       });
                     },
                     child: Row(
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(left: 6, top: 5, bottom: 5),
-                          width: 45,
-                          height: 45,
+                          width: 50,
+                          height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             //borderRadius: BorderRadius.circular(15),
@@ -557,7 +668,8 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.red.shade800, spreadRadius: 4),
+                                  color: Colors.red.shade900,
+                                  spreadRadius: 3.5),
                             ],
                           ),
                         ),
@@ -568,9 +680,9 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                'Manish Gautam',
+                                name.elementAt(8),
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.red.shade600,
                                 ),
@@ -581,21 +693,24 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        SizedBox(width: 92),
+                        SizedBox(width: 88),
                         Transform.scale(
                           scale: 1.6,
-                          child: Radio(
-                            value: 8,
-                            activeColor: Colors.red.shade900,
-                            groupValue: _radioValue1,
-                            onChanged: _handleRadioValueChange1,
+                          child: Visibility(
+                            visible: _visibility8,
+                            child: Radio(
+                              value: 8,
+                              activeColor: Colors.red.shade900,
+                              groupValue: _radioValue1,
+                              onChanged: _handleRadioValueChange1,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Divider(
-                      color: Colors.grey.shade400, endIndent: 20, height: 12),
+                      color: Colors.grey.shade400, endIndent: 20, height: 14),
                 ],
               ),
             ),
@@ -616,21 +731,21 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
           children: <Widget>[
             Icon(
               Icons.arrow_back,
-              color: Colors.grey.shade600,
+              color: Colors.grey.shade500,
               size: 33,
             ),
             Text('Directory',
                 style: TextStyle(
                   fontSize: 37,
                   fontWeight: FontWeight.w300,
-                  color: Colors.grey.shade600,
+                  color: Colors.grey.shade500,
                 )),
             SizedBox(
               height: 5,
             ),
             Text('TOP SUGGESTIONS',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 19,
                   fontWeight: FontWeight.normal,
                   color: Colors.grey,
                 )),
@@ -673,7 +788,7 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(5.0),
             ),
             child: Container(
               height: 150,
@@ -695,11 +810,11 @@ class _DirectoryState extends State<Directory> with TickerProviderStateMixin {
                         ),
                       ),
                       SizedBox(width: 7),
-                      Text('Antony James', style: TextStyle(fontSize: 15)),
-                      SizedBox(width: 130),
+                      Text('Manish Gautam', style: TextStyle(fontSize: 15)),
+                      SizedBox(width: 120),
                       Text('Clear',
                           style: TextStyle(
-                              fontSize: 18, color: Colors.red.shade700)),
+                              fontSize: 17, color: Colors.red.shade700)),
                     ],
                   ),
                   SizedBox(height: 8),
